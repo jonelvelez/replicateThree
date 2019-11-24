@@ -1,16 +1,63 @@
 * {
     box-sizing: border-box;
     margin: 0;
-  
+    padding: 0;
 }
+
+
+.navaddclass{
+    transition: .5s;
+    background: #9dc7d3;
+}
+
+
 
 html{
     overflow-x: hidden;
 }
 
 nav{
-    background: #9dc7d3;
-    
+    background: transparent;
+    transition: 1s;
+
+}
+
+nav .sidebar{
+    position: fixed;
+    width: 70%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background:#9dc7d3;
+    z-index: 999999; 
+    transition: .5s;
+}
+
+nav .sidebar i{
+    font-size: 25px;
+    -webkit-text-stroke: 1px white;
+    color: #fff;
+    float: right;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+nav .sidebar .sidebar-wrapper{
+    align-content: center;
+    position: absolute;
+    top: 10%;
+    font-size: 1rem;
+}
+
+nav .sidebar .sidebar-wrapper ul{
+    list-style-type: none;
+}
+
+nav .sidebar .sidebar-wrapper .btn{
+    display: block;
+    margin: 0 auto;
 }
 
 nav img{
@@ -23,12 +70,13 @@ nav .single{
     font-size: 1.4rem;
     color: #fff;
     font-family: 'Didact Gothic', sans-serif;
-    line-height: inherit;  
+    line-height: inherit; 
+    
 }
 
 nav .navbar-nav{
-   position: relative;
-   left: 30%;   
+    position: relative;
+    left: 50%;
 }
 
 nav .nav-item .nav-link{
@@ -39,12 +87,12 @@ nav .btn{
     border-radius: 0;
     letter-spacing: 1px;
     padding: 0 10px;
-   
+    position: relative;
+    left: 5px;
 }
 
 nav .btn span{
-    font-size: .7rem;
-    line-height: 1px;
+    font-size: .8rem;
     color: grey;
     font-weight: 500;
 }
@@ -58,6 +106,17 @@ nav .hamburger{
 @media only screen and (max-width: 1024px){
     nav .single{
         font-size: 1rem; 
+    }
+}
+
+@media only screen and (min-width: 768px){
+    nav .sidebar .sidebar-wrapper{
+        align-content: center;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1rem;
     }
 }
 
@@ -100,10 +159,15 @@ nav .hamburger{
     background-color: #e2f938;
     
 }
-
-.section-body-one .title h3{
+ 
+.section-body-one .title .h3{
     margin-left: 100px;
+    transition: .5s;
+    transform: translate3d(-100%, 0, 0);
+    
 }
+
+
 
 .section-body-one .card{
     background: #2cc747;
@@ -190,7 +254,7 @@ nav .hamburger{
 @media only screen and (max-width: 1024px){
     
 
-    .section-body-one .title h3{
+    .section-body-one .title .h3{
         margin-left: 0px;
     }
 
@@ -208,8 +272,10 @@ nav .hamburger{
     margin: 150px  0  100px;
 }
 
-.section-body-two .title-services h3{
+.section-body-two .title-services .h3{
     margin-left: 100px;
+    transition: .5s;
+    transform: translate3d(-100%, 0, 0);
 }
 
 .section-body-two .body1{
@@ -264,13 +330,44 @@ nav .hamburger{
 .section-body-two .card-body:hover{
     box-shadow: inset 0 0 0 2000px rgba(37, 233, 30, 0.3);
     box-shadow: 20px 20px 50px grey; 
+    transform: translate3d(0, -10px, 0);
+    transition: .5s;
 }
 
-.section-body-two .card-body i{
+.section-body-two .card-body:hover .arrow{
+    display: block;
+
+}
+
+.section-body-two .card-body .fa-angle-right{
     position: absolute;
     top: 80%;
     font-size: 20px;
     font-weight: 700;
+}
+
+.section-body-two .card-body .arrow{
+    position: absolute;
+    top: 78%;
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 50%;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+}
+
+.section-body-two .card-body .fa-arrow-right{
+  
+    transition: 1s;
+    font-size: 15px;
+    color: #000;
+    width: 10px;
+    transition: 1s;
+   
 }
 
 
@@ -288,8 +385,10 @@ nav .hamburger{
     margin-bottom: 100px;
 }
 
-.section-body-three .title-team h3{
+.section-body-three .title-team .h3{
     margin-left: 100px;
+    transition: .5s;
+    transform: translate3d(-100%, 0, 0);
 }
 
 .section-body-three .container{
@@ -305,8 +404,10 @@ nav .hamburger{
 .section-body-three .wrapper-image{
     position: relative;
     height: 15rem; 
+    transform: translate3d(0, 100px, 0);  
+    /* opacity: 0; */
+    transition: 1s;
 }
-
 
 
 .section-body-three span{
@@ -365,7 +466,7 @@ nav .hamburger{
 
 @media only screen and (max-width: 1024px){
 
-    .section-body-two .title-services h3{
+    .section-body-two .title-services .h3{
         margin-left: 0px;
     }
 
@@ -382,9 +483,8 @@ nav .hamburger{
     }
 
     .section-body-three .wrapper-image img{
-      object-position: 0px 20%;
-      
-    }
+        object-position: 0px 20%;
+    }   
 
     .section-body-three .container{
         height: 25rem;
@@ -394,7 +494,7 @@ nav .hamburger{
         background: linear-gradient(to top,  #e2f938 0%,#e2f938 75%,#fff 50%,#fff 100%);
     }
 
-    .section-body-three .title-team h3{
+    .section-body-three .title-team .h3{
             margin-left: 0px;
     }
 
@@ -437,6 +537,8 @@ nav .hamburger{
 
 .section-body-fourth .title-latest h3{
     margin-left: 100px;
+    transition: .5s;
+    transform: translate3d(-100%, 0, 0);
 }
 
 .section-body-fourth .wrapper-image1{
@@ -501,7 +603,7 @@ nav .hamburger{
         text-align: center;
       }
 
-    .section-body-fourth .title-latest h3{
+    .section-body-fourth .title-latest .h3{
         margin-left: 0px;
     }
 }
@@ -521,8 +623,10 @@ nav .hamburger{
     margin: 100px 0 100px ;
 }
 
-.section-body-fifth .title-clients h3{
+.section-body-fifth .title-clients .h3{
     margin-left: 100px;
+    transition: .5s;
+    transform: translate3d(100%, 0, 0);
 }
 
 .section-body-fifth .row1{
@@ -599,7 +703,7 @@ nav .hamburger{
 }
 
 .section-body-fifth .card-img{
-    height: 80px;
+    height: 90px;
     width: 100%;  
 }
 
@@ -653,7 +757,7 @@ nav .hamburger{
         text-align: center;
     }
 
-    .section-body-fifth .title-clients h3{
+    .section-body-fifth .title-clients .h3{
         margin-left: 0;
     }
 }
@@ -672,8 +776,10 @@ nav .hamburger{
     margin: 100px 0 50px ;
 }
 
-.section-body-sixth .title-contact h3{
+.section-body-sixth .title-contact .h3{
     margin-left: 100px;
+    transition: .5s;
+    transform: translate3d(-100%, 0, 0);
 }
 
 .section-body-sixth .logos{
@@ -758,7 +864,7 @@ nav .hamburger{
         text-align: center;
     }
 
-    .section-body-sixth .title-contact h3{
+    .section-body-sixth .title-contact .h3{
         margin-left: 0px;
     }
 }
